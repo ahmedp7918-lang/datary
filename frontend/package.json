@@ -1,0 +1,39 @@
+{
+    "name": "datary-frontend",
+    "version": "1.0.0",
+    "description": "Datary Frontend - Synthetic Data Generator UI",
+    "main": "index.html",
+    "author": "Ahmed (@q7x_vq)",
+    "email": "ahmedp7918@gmail.com",
+    "scripts": {
+        "start": "npx serve .",
+        "dev": "npx serve .",
+        "build": "echo 'No build step required for static files'",
+        "test": "echo 'No tests configured'"
+    },
+    "keywords": [
+        "data-generator",
+        "synthetic-data",
+        "mock-data",
+        "dataset-generator",
+        "test-data",
+        "development-tools"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/q7x_vq/datary"
+    },
+    "bugs": {
+        "url": "https://github.com/q7x_vq/datary/issues",
+        "email": "ahmedp7918@gmail.com"
+    },
+    "homepage": "https://datary.dev",
+    "license": "MIT",
+    "devDependencies": {
+        "serve": "^14.2.0"
+    },
+    "engines": {
+        "node": ">=16.0.0",
+        "npm": ">=8.0.0"
+    }
+}

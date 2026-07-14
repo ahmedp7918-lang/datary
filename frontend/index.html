@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datary - Generate realistic data in seconds</title>
+    <meta name="description" content="Create custom datasets for testing, development, and analysis with Datary's synthetic data generator." />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Datary - Your data. Your structure. Generated." />
+    <meta property="og:description" content="Generate realistic synthetic data for testing, development, and analysis." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://datary.dev" />
+    <meta name="theme-color" content="#0b1121" />
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="navbar">
+            <div class="logo">
+                <img src="/assets/logo.svg" alt="Datary" width="32" height="32" />
+                Datary <span>| generate</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#templates">Templates</a>
+                <a href="#generator">Generator</a>
+                <a href="#tools">Tools</a>
+                <a href="#" class="btn btn-primary btn-sm" id="getStartedBtn">Get Started</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <h1>Generate <span class="highlight">realistic data</span> in seconds</h1>
+            <p>Create custom datasets for testing, development, and analysis.</p>
+            <div class="actions">
+                <a href="#generator" class="btn btn-primary">Generate Dataset</a>
+                <a href="#templates" class="btn btn-secondary">Explore Templates</a>
+            </div>
+        </section>
+
+        <!-- Ad Banner -->
+        <div class="ad-container" id="ad-hero">
+            <div class="ad-banner">
+                <span class="ad-label">— Ad Space —</span>
+                <p style="margin-top:0.25rem;">Your banner could be here</p>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <section class="features" id="features">
+            <div class="grid-4">
+                <div class="feature-item">
+                    <div class="icon">🔓</div>
+                    <h3>No account</h3>
+                    <p>Start generating instantly</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🎯</div>
+                    <h3>Realistic mock</h3>
+                    <p>Data that feels real</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📦</div>
+                    <h3>Multiple formats</h3>
+                    <p>CSV, JSON, SQL, XML &amp; more</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">⚡</div>
+                    <h3>Fast &amp; easy</h3>
+                    <p>Full control, no friction</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Templates -->
+        <section class="templates" id="templates">
+            <h2 class="section-title">⚡ Quick templates</h2>
+            <div class="template-grid">
+                <span class="template-chip" data-template="ecommerce">E‑commerce</span>
+                <span class="template-chip" data-template="banking">Banking</span>
+                <span class="template-chip" data-template="healthcare">Healthcare</span>
+                <span class="template-chip" data-template="education">Education</span>
+                <span class="template-chip" data-template="employees">Employees</span>
+                <span class="template-chip" data-template="crm">CRM</span>
+                <span class="template-chip" data-template="realestate">Real Estate</span>
+                <span class="template-chip" data-template="restaurants">Restaurants</span>
+                <span class="template-chip" data-template="socialmedia">Social Media</span>
+                <span class="template-chip" data-template="logistics">Logistics</span>
+            </div>
+        </section>
+
+        <!-- Generator -->
+        <section class="gen-section" id="generator">
+            <h2 class="gen-title">⚙️ Dataset Builder</h2>
+            <p class="gen-sub">Add columns, configure types, and generate your data.</p>
+
+            <!-- Add Field -->
+            <div class="field-row" id="add-field-row">
+                <div class="form-group">
+                    <label>Field name</label>
+                    <input type="text" id="field-name" placeholder="e.g. full_name" value="full_name" />
+                </div>
+                <div class="form-group">
+                    <label>Data type</label>
+                    <select id="field-type">
+                        <option value="name">Name</option>
+                        <option value="email">Email</option>
+                        <option value="phone">Phone</option>
+                        <option value="address">Address</option>
+                        <option value="country">Country</option>
+                        <option value="city">City</option>
+                        <option value="company">Company</option>
+                        <option value="number">Number</option>
+                        <option value="date">Date</option>
+                        <option value="boolean">Boolean</option>
+                        <option value="uuid">UUID</option>
+                        <option value="url">URL</option>
+                        <option value="ip">IP</option>
+                        <option value="price">Price</option>
+                        <option value="custom">Custom Pattern</option>
+                    </select>
+                </div>
+                <div class="form-group" style="flex:0 0 auto;">
+                    <label>&nbsp;</label>
+                    <button class="btn btn-primary" id="add-field-btn">+ Add Field</button>
+                </div>
+            </div>
+
+            <!-- Fields List -->
+            <div class="fields-list" id="fields-list">
+                <div class="field-item">
+                    <span><strong>id</strong> <span class="badge">uuid</span></span>
+                    <button class="remove-btn" data-field="id">✕</button>
+                </div>
+                <div class="field-item">
+                    <span><strong>full_name</strong> <span class="badge">name</span></span>
+                    <button class="remove-btn" data-field="full_name">✕</button>
+                </div>
+                <div class="field-item">
+                    <span><strong>email</strong> <span class="badge">email</span></span>
+                    <button class="remove-btn" data-field="email">✕</button>
+                </div>
+            </div>
+
+            <!-- Settings -->
+            <div class="settings-row">
+                <div class="setting-item">
+                    <label>Rows</label>
+                    <input type="number" id="row-count" value="100" min="1" max="100000" />
+                </div>
+                <div class="setting-item">
+                    <label>Country / Locale</label>
+                    <select id="locale-select">
+                        <option value="en_US">United States (en)</option>
+                        <option value="ar_SA">Saudi Arabia (ar)</option>
+                        <option value="en_GB">United Kingdom</option>
+                        <option value="fr_FR">France</option>
+                        <option value="de_DE">Germany</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label>Export format</label>
+                    <select id="format-select">
+                        <option value="json">JSON</option>
+                        <option value="jsonl">JSONL</option>
+                        <option value="csv">CSV</option>
+                        <option value="sql">SQL</option>
+                        <option value="xml">XML</option>
+                        <option value="yaml">YAML</option>
+                        <option value="html">HTML Table</option>
+                        <option value="markdown">Markdown Table</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Advanced toggle -->
+            <button class="advanced-toggle" id="advanced-toggle">⚙️ Advanced Options ▾</button>
+            <div class="advanced-panel" id="advanced-panel">
+                <div class="adv-grid">
+                    <div class="adv-item">
+                        <label>Live preview (rows)</label>
+                        <input type="number" id="preview-rows" value="10" min="1" max="50" />
+                    </div>
+                    <div class="adv-item">
+                        <label>Seed (reproducible)</label>
+                        <input type="text" id="seed-input" placeholder="e.g. 12345" />
+                    </div>
+                    <div class="adv-item">
+                        <label>Null %</label>
+                        <input type="number" id="null-percentage" value="0" min="0" max="100" />
+                    </div>
+                    <div class="adv-item">
+                        <label>Unique values</label>
+                        <select id="unique-select">
+                            <option value="false">No</option>
+                            <option value="true">Yes</option>
+                        </select>
+                    </div>
+                    <div class="adv-item">
+                        <label>Custom pattern</label>
+                        <input type="text" id="custom-pattern" placeholder="ORD-####" />
+                    </div>
+                    <div class="adv-item">
+                        <label>Import schema</label>
+                        <textarea id="import-schema" placeholder="Paste your schema here..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Generate Button -->
+            <div style="display:flex; gap:1rem; flex-wrap:wrap; margin:1.5rem 0;">
+                <button class="btn btn-primary" id="generate-btn" style="padding:0.8rem 3rem; font-size:1.1rem;">🚀 Generate Dataset</button>
+                <button class="btn btn-secondary" id="clear-fields-btn">Clear All</button>
+            </div>
+
+            <!-- Ad Container -->
+            <div class="ad-container" id="ad-generator">
+                <div class="ad-banner">
+                    <span class="ad-label">— Ad Space —</span>
+                    <p style="margin-top:0.25rem;">Relevant ad for developers</p>
+                </div>
+            </div>
+
+            <!-- Result Box -->
+            <div class="result-box" id="result-box" style="display:none;">
+                <div class="lock-icon">🔒</div>
+                <h3 style="font-size:1.5rem;">Your dataset is ready</h3>
+                <div class="countdown" id="countdown">00:59</div>
+                <p class="text-muted">Wait for the lock to open, then download or copy.</p>
+                <div class="download-actions" id="download-actions">
+                    <button class="btn btn-primary" id="download-btn" disabled>⬇ Download File</button>
+                    <button class="btn btn-secondary" id="copy-btn" disabled>📋 Copy Code</button>
+                </div>
+            </div>
+
+            <!-- Code Editor -->
+            <div class="code-editor" id="code-editor" style="display:none;">
+                <div class="code-header">
+                    <span class="lang-tag" id="code-lang">JSON</span>
+                    <button class="copy-btn" id="code-copy-btn">📄 Copy</button>
+                </div>
+                <pre id="code-content">// Your generated data will appear here</pre>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools" style="padding:2rem 0;">
+            <h2 style="font-size:1.6rem; margin-bottom:1rem;">🧰 All Generators</h2>
+            <div style="display:flex; flex-wrap:wrap; gap:0.75rem;">
+                <span class="template-chip">CSV</span>
+                <span class="template-chip">JSON</span>
+                <span class="template-chip">SQL</span>
+                <span class="template-chip">XML</span>
+                <span class="template-chip">YAML</span>
+                <span class="template-chip">HTML Table</span>
+                <span class="template-chip">Markdown Table</span>
+                <span class="template-chip">UUID</span>
+            </div>
+        </section>
+
+        <!-- Legal Footer Links -->
+        <div class="legal-links">
+            <a href="/pages/privacy.html">Privacy Policy</a>
+            <a href="/pages/terms.html">Terms of Service</a>
+            <a href="/pages/cookies.html">Cookie Policy</a>
+            <a href="/pages/disclaimer.html">Disclaimer</a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div>
+                <span>© 2026 Datary — Your data. Your structure. Generated.</span>
+                <div style="margin-top:0.5rem; font-size:0.8rem; color:#64748b;">
+                    <span>Developer: <a href="https://instagram.com/q7x_vq" target="_blank" style="color:#60a5fa;">@q7x_vq</a></span>
+                    <span style="margin:0 0.5rem;">|</span>
+                    <span>Email: <a href="mailto:ahmedp7918@gmail.com" style="color:#60a5fa;">ahmedp7918@gmail.com</a></span>
+                </div>
+            </div>
+            <span style="display:flex; gap:1.5rem;">
+                <a href="/pages/privacy.html">Privacy</a>
+                <a href="/pages/terms.html">Terms</a>
+                <a href="/pages/cookies.html">Cookies</a>
+                <a href="/pages/disclaimer.html">Disclaimer</a>
+            </span>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

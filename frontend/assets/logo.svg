@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+    <defs>
+        <!-- Gradient for the main icon -->
+        <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Gradient for the data bars -->
+        <linearGradient id="barGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+        </linearGradient>
+        
+        <linearGradient id="barGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#93c5fd;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+        </linearGradient>
+        
+        <linearGradient id="barGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#bfdbfe;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#93c5fd;stop-opacity:1" />
+        </linearGradient>
+
+        <!-- Glow effect -->
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <filter id="shadow">
+            <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#2563eb" flood-opacity="0.3"/>
+        </filter>
+    </defs>
+
+    <!-- Background circle -->
+    <circle cx="100" cy="100" r="90" fill="#111b2e" stroke="url(#mainGradient)" stroke-width="3" filter="url(#shadow)"/>
+    
+    <!-- Database icon (cylinder) -->
+    <ellipse cx="100" cy="65" rx="40" ry="12" fill="url(#mainGradient)" opacity="0.8"/>
+    <path d="M60,65 L60,85 Q60,97 100,97 Q140,97 140,85 L140,65" fill="none" stroke="url(#mainGradient)" stroke-width="3"/>
+    <ellipse cx="100" cy="85" rx="40" ry="12" fill="none" stroke="url(#mainGradient)" stroke-width="2" opacity="0.6"/>
+    <path d="M60,85 L60,105 Q60,117 100,117 Q140,117 140,105 L140,85" fill="none" stroke="url(#mainGradient)" stroke-width="2" opacity="0.4"/>
+    <ellipse cx="100" cy="105" rx="40" ry="12" fill="url(#mainGradient)" opacity="0.2"/>
+
+    <!-- Data bars inside the database -->
+    <rect x="78" y="70" width="8" height="20" rx="2" fill="url(#barGradient1)" filter="url(#glow)"/>
+    <rect x="92" y="75" width="8" height="15" rx="2" fill="url(#barGradient2)" filter="url(#glow)"/>
+    <rect x="106" y="65" width="8" height="25" rx="2" fill="url(#barGradient3)" filter="url(#glow)"/>
+    <rect x="120" y="72" width="8" height="18" rx="2" fill="url(#barGradient1)" filter="url(#glow)"/>
+
+    <!-- Data rows (horizontal lines) -->
+    <line x1="65" y1="125" x2="135" y2="125" stroke="#60a5fa" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
+    <line x1="70" y1="133" x2="130" y2="133" stroke="#60a5fa" stroke-width="2" opacity="0.2" stroke-linecap="round"/>
+    <line x1="75" y1="141" x2="125" y2="141" stroke="#60a5fa" stroke-width="2" opacity="0.15" stroke-linecap="round"/>
+
+    <!-- Datary text -->
+    <text x="100" y="168" font-family="Inter, system-ui, -apple-system, sans-serif" 
+          font-size="22" font-weight="700" fill="url(#mainGradient)" text-anchor="middle" letter-spacing="1">
+        Datary
+    </text>
+
+    <!-- Small decorative dots -->
+    <circle cx="55" cy="60" r="3" fill="#60a5fa" opacity="0.3"/>
+    <circle cx="145" cy="80" r="3" fill="#93c5fd" opacity="0.3"/>
+    <circle cx="50" cy="110" r="2" fill="#60a5fa" opacity="0.2"/>
+    <circle cx="150" cy="100" r="2" fill="#93c5fd" opacity="0.2"/>
+</svg>
